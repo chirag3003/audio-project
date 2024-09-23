@@ -4,7 +4,7 @@
 
 int main() {
     // Play a WAV file using a system command
-    int result = system("aplay /home/chirag/Projects/college/c/lab/music.mwav");
+    int result = system("aplay ./music2.wav");
 
     if (result == 0) {
         std::cout << "Playing audio..." << std::endl;
