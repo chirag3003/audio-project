@@ -1,19 +1,41 @@
 #include <iostream>
-#include <cstdlib>
-#include <string>
+#include "music.h"
 
-int main() {
-    // Play a WAV file using a system command
-    int result = system("aplay ./music2.wav");
+using namespace std;
 
-    if (result == 0) {
-        std::cout << "Playing audio..." << std::endl;
-    } else {
-        std::cerr << "Error: Could not play the audio file." << std::endl;
+class Music
+{
+public:
+    string name; // Name of the music
+    string file; // Address of the music file
+    int duration; // Duration of music
+    int currenttime; //Current time of the music
+    bool status; // Play or pause
+    void play(){
+        status = true;
     }
+    void pause(){
+        status = false;
+    }
+    void restart(){
+        currenttime = 0;
+    }
+    Music(){
 
-    std::cout << "Press Enter to exit..." << std::endl;
-    std::cin.get();
+    }
+    void getinfo(){
+        cout<< "enter the name";
+    }
+};
+
+int main()
+{
+
+    Music m1;
+    m1.name = "xyz";
+    m1.file = "mp";
+    m1.duration = 12;
+    m1.currenttime = 5;
 
     return 0;
-};
+}
